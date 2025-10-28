@@ -1,4 +1,4 @@
-(* First, we define the concrete types that were abstract in the .mli file. *)
+(* we first define the concrete types that were abstract in the .mli file. *)
 type task = {
   id: int;
   description: string;
@@ -36,9 +36,3 @@ let add_task description list =
 
     (* return a new list with the new task appended to the end *)
     list @ [new_task]
-    
-let complete_task id list =
-  failwith "Unimplemented: complete_task"
-
-let remove_task id list =
-  failwith "Unimplemented: remove_task"
