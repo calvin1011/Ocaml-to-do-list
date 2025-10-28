@@ -1,10 +1,6 @@
-(** The abstract type for a to-do list.
-    We need to refer to it, so we bring it in from the Todolist module. *)
-type todo_list = Todolist.todo_list
-
-(** load a to-do list from the file at [filepath].
+(** [load filepath] loads a to-do list from the file at [filepath].
     If the file does not exist, it returns an empty list. *)
-val load : string -> todo_list
+val load : string -> Todolist.todo_list
 
-(** save the given [list] to the file at [filepath]. *)
-val save : string -> todo_list -> unit
+(** [save filepath list] saves the given [list] to the file at [filepath]. *)
+val save : string -> Todolist.todo_list -> unit

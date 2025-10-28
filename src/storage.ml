@@ -9,7 +9,7 @@ let csv_to_task line =
         let completed = bool_of_string completed_str in
         (* Remove the quotes around the description *)
         let description = String.sub desc_str 1 (String.length desc_str - 2) in
-        Some { id; description; completed }
+        Some { id = id; description = description; completed = completed }
       with
       | _ -> None) (* Return None if conversion fails *)
   | _ -> None (* Return None if the line doesn't have exactly 3 parts *)

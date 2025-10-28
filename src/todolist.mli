@@ -1,8 +1,12 @@
-(** The abstract type for a single task. *)
-type task
+(** The public type for a single task. *)
+type task = {
+  id: int;
+  description: string;
+  completed: bool;
+}
 
-(** The abstract type for a list of tasks. *)
-type todo_list
+(** The public type for a list of tasks. *)
+type todo_list = task list
 
 (** [id task] returns the ID of the task. *)
 val id : task -> int
@@ -12,7 +16,6 @@ val description : task -> string
 
 (** [completed task] returns the completion status of the task. *)
 val completed : task -> bool
-
 
 (** [create ()] returns an empty to-do list. *)
 val create : unit -> todo_list

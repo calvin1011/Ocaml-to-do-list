@@ -36,3 +36,17 @@ let add_task description list =
 
     (* return a new list with the new task appended to the end *)
     list @ [new_task]
+
+let complete_task id_to_complete list =
+  List.map
+    (fun task ->
+      if task.id = id_to_complete then
+        { task with completed = true } (* Create a new record with 'completed' updated *)
+      else
+        task) (* Return the original task if the ID doesn't match *)
+    list
+
+let remove_task id_to_remove list =
+  List.filter
+    (fun task -> task.id <> id_to_remove) (* Keep only tasks where the ID is NOT equal *)
+    list
